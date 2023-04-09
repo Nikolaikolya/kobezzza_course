@@ -6,14 +6,12 @@ export const createBitGetter = (uArray: Uint8Array): IBitGetterResponse => {
   const validateParams = (params: IValidateParams): string => {
     const { index, bitPosition } = params;
 
-    if (!uArray[index] || bitPosition > 7 || bitPosition < 0) {
-      if (!uArray[index]) {
-        return keyMessages.notData;
-      }
+    if (!uArray[index]) {
+      return keyMessages.notData;
+    }
 
-      if (bitPosition > 7 || bitPosition < 0) {
-        return keyMessages.notIndexBit;
-      }
+    if (bitPosition > 7 || bitPosition < 0) {
+      return keyMessages.notIndexBit;
     }
 
     return "";
