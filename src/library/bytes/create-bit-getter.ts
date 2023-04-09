@@ -3,7 +3,7 @@ import { Byte } from "./index.js";
 import { BitValue, IBitGetterResponse, IValidateParams } from "./interface.js";
 
 export const createBitGetter = (uArray: Uint8Array): IBitGetterResponse => {
-  const validateParams = (params: IValidateParams): string | boolean => {
+  const validateParams = (params: IValidateParams): string => {
     const { index, bitPosition } = params;
 
     if (!uArray[index] || bitPosition > 7 || bitPosition < 0) {
@@ -16,7 +16,7 @@ export const createBitGetter = (uArray: Uint8Array): IBitGetterResponse => {
       }
     }
 
-    return false;
+    return "";
   };
 
   return {
