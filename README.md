@@ -1,1 +1,2 @@
-# kobezzza_course
+# my-library
+Мои личные "фичи"
